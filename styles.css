@@ -557,6 +557,36 @@ img, svg { max-width: 100%; display: block; }
   align-items: center;
 }
 .jacket-svg { width: 100%; max-width: 260px; margin: 0 auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.45)); }
+.trophy-figure {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid var(--gold);
+  outline: 1px solid rgba(198, 163, 91, 0.4);
+  outline-offset: 4px;
+  background: rgba(5, 40, 24, 0.5);
+  box-shadow: 0 26px 60px -25px rgba(0, 0, 0, 0.6);
+}
+.trophy-figure img { width: 100%; }
+.trophy-figure figcaption, .lodge-figure figcaption {
+  padding-top: 12px;
+  font-family: var(--font-caps);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--gold);
+}
+.lodge-figure {
+  margin: 34px auto 6px;
+  padding: 10px 10px 4px;
+  border: 1px solid var(--gold);
+  outline: 1px solid rgba(198, 163, 91, 0.4);
+  outline-offset: 4px;
+  background: #fff;
+}
+.lodge-figure img { width: 100%; }
+.lodge-figure figcaption { color: var(--green-deep); padding-bottom: 8px; }
 .jacket-text .section-title { margin-bottom: 0; }
 .jacket-text .section-rule { margin-left: 0; justify-content: flex-start; max-width: 260px; }
 .jacket-text p { margin-top: 1.1em; color: rgba(246, 241, 229, 0.9); max-width: 56ch; }
@@ -664,6 +694,7 @@ img, svg { max-width: 100%; display: block; }
   border-bottom: 1px solid rgba(198, 163, 91, 0.12);
 }
 .tee-list li:last-child { border-bottom: none; }
+.tee-list .champ-badge { margin-left: 12px; }
 .field-note {
   margin-top: 44px;
   text-align: center;
