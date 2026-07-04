@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Släktgolfen 2026 — TV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #0b4a2f;
+      --green-dark: #083a24;
+      --gold: #c6a35b;
+      --gold-soft: #d8bc80;
+      --cream: #f6f1e5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; overflow: hidden; cursor: none; }
+    body {
+      font-family: "EB Garamond", Georgia, serif;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(15, 92, 58, 0.85), transparent 65%),
+        linear-gradient(175deg, #0d5233 0%, var(--green-dark) 55%, #052818 100%);
+    }
+
+    .contours {
+      position: fixed; inset: 0; pointer-events: none;
+    }
+    .contours svg { width: 100%; height: 100%; }
+
+    .frame {
+      position: fixed; inset: 28px;
+      border: 1px solid rgba(198, 163, 91, 0.4);
+      outline: 1px solid rgba(198, 163, 91, 0.18);
+      outline-offset: 6px;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .clock {
+      position: fixed;
+      top: 52px; right: 64px;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.5vw;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      z-index: 6;
+      font-variant-numeric: tabular-nums;
+    }
+    .brand {
+      position: fixed;
+      top: 52px; left: 64px;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.1vw;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(246, 241, 229, 0.75);
+      z-index: 6;
+    }
+    .brand em { font-style: normal; color: var(--gold); }
+
+    /* ---- Slides ---- */
+    .slide {
+      position: fixed; inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1.6s ease;
+      padding: 6vw;
+      z-index: 2;
+    }
+    .slide.active { opacity: 1; z-index: 3; }
+
+    .kicker {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.4vw;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2vw;
+    }
+    .rule {
+      display: flex; align-items: center; gap: 16px;
+      width: 22vw; margin: 1.6vw auto;
+    }
+    .rule span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .rule span:last-child { background: linear-gradient(90deg, var(--gold), transparent); }
+    .rule i { font-style: normal; color: var(--gold); font-size: 1vw; }
+
+    /* Slide 1: titel + nedräkning */
+    .crest { width: 9vw; height: 9vw; margin-bottom: 1.5vw; }
+    .title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 8.5vw;
+      line-height: 1;
+    }
+    .tagline {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: 2.4vw;
+      color: var(--gold-soft);
+      margin: 0.6vw 0 0.8vw;
+    }
+    .meta {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.3vw;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(246, 241, 229, 0.85);
+      margin-bottom: 2.6vw;
+    }
+    .countdown { display: flex; gap: 2.2vw; }
+    .cd-unit {
+      display: flex; flex-direction: column; align-items: center;
+      min-width: 9vw;
+      padding: 1.4vw 1vw 1.1vw;
+      border: 1px solid rgba(198, 163, 91, 0.45);
+      background: rgba(5, 40, 24, 0.5);
+    }
+    .cd-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 5.5vw;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .cd-label {
+      margin-top: 0.8vw;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 0.85vw;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .live-msg {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 2.6vw;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Slide 2: startlista */
+    .h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 4.8vw;
+      margin-bottom: 0.4vw;
+    }
+    .tees { display: flex; gap: 3vw; margin-top: 2.4vw; }
+    .tee {
+      min-width: 26vw;
+      border: 1px solid rgba(198, 163, 91, 0.45);
+      background: rgba(5, 40, 24, 0.5);
+    }
+    .tee-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 1.3vw 2vw;
+      border-bottom: 1px solid rgba(198, 163, 91, 0.4);
+      background: rgba(198, 163, 91, 0.1);
+    }
+    .tee-label {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1vw;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .tee-time {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 2.6vw;
+      font-variant-numeric: tabular-nums;
+    }
+    .tee ul { list-style: none; padding: 0.8vw 0; }
+    .tee li {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 2.2vw;
+      padding: 0.7vw 2vw;
+      border-bottom: 1px solid rgba(198, 163, 91, 0.14);
+      text-align: left;
+    }
+    .tee li:last-child { border-bottom: none; }
+
+    /* Slide 3: program */
+    .program { display: flex; gap: 4vw; margin-top: 2.4vw; text-align: left; }
+    .day { min-width: 24vw; }
+    .day h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 2.4vw;
+      color: var(--gold-soft);
+      padding-bottom: 0.6vw;
+      margin-bottom: 1vw;
+      border-bottom: 1px solid var(--gold);
+    }
+    .day li {
+      list-style: none;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.9vw;
+      padding: 0.45vw 0;
+    }
+
+    /* Slide 4: citat */
+    .quote {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: 4.6vw;
+      line-height: 1.25;
+      max-width: 70vw;
+    }
+    .quote-cite {
+      margin-top: 2vw;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 1.1vw;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Progressprickar */
+    .dots {
+      position: fixed;
+      bottom: 52px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 14px;
+      z-index: 6;
+    }
+    .dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: transparent;
+      transition: background 0.5s;
+    }
+    .dots span.on { background: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <div class="contours" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="rgba(198,163,91,.10)" stroke-width="1.5">
+        <path d="M-100,700 C200,620 420,760 720,690 S1240,600 1560,680"/>
+        <path d="M-100,640 C220,560 440,700 740,630 S1260,540 1580,620"/>
+        <path d="M-100,580 C240,500 460,640 760,570 S1280,480 1600,560"/>
+        <path d="M-100,520 C260,440 480,580 780,510 S1300,420 1620,500"/>
+      </g>
+      <g fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1">
+        <circle cx="1180" cy="230" r="130"/>
+        <circle cx="1180" cy="230" r="200"/>
+        <circle cx="1180" cy="230" r="280"/>
+        <circle cx="230" cy="180" r="90"/>
+        <circle cx="230" cy="180" r="160"/>
+      </g>
+    </svg>
+  </div>
+  <div class="frame" aria-hidden="true"></div>
+
+  <p class="brand">Släktgolfen <em>MMXXVI</em></p>
+  <p class="clock" id="clock">--:--</p>
+
+  <!-- Slide 1: Titel + nedräkning -->
+  <section class="slide active">
+    <svg viewBox="0 0 120 120" class="crest" aria-hidden="true">
+      <circle cx="60" cy="60" r="57" fill="none" stroke="#c6a35b" stroke-width="1.2"/>
+      <circle cx="60" cy="60" r="51" fill="none" stroke="#c6a35b" stroke-width=".6"/>
+      <g stroke="#c6a35b" stroke-width="1" fill="none">
+        <path d="M28,82 C22,68 22,50 30,38"/>
+        <path d="M92,82 C98,68 98,50 90,38"/>
+      </g>
+      <g>
+        <line x1="60" y1="30" x2="60" y2="78" stroke="#c6a35b" stroke-width="1.6"/>
+        <path d="M60,30 L78,36 L60,42 Z" fill="#c6a35b"/>
+        <circle cx="53" cy="80" r="4" fill="#f6f1e5"/>
+        <path d="M42,84 Q60,90 78,84" stroke="#c6a35b" stroke-width="1.2" fill="none"/>
+      </g>
+    </svg>
+    <p class="kicker">The Lind Invitational</p>
+    <h1 class="title">Släktgolfen</h1>
+    <p class="tagline">En tradition som ingen annan</p>
+    <p class="meta">Lycke Golf &amp; Country Club · Söndag 5 juli · 10:40</p>
+    <div class="countdown" id="countdown">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">–</span><span class="cd-label">Dagar</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">–</span><span class="cd-label">Timmar</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">–</span><span class="cd-label">Minuter</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">–</span><span class="cd-label">Sekunder</span></div>
+    </div>
+    <p class="live-msg" id="live-msg" hidden></p>
+  </section>
+
+  <!-- Slide 2: Startlistan -->
+  <section class="slide">
+    <p class="kicker">Startlistan</p>
+    <h2 class="h2">Fältet 2026</h2>
+    <div class="rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+    <div class="tees">
+      <div class="tee">
+        <div class="tee-head"><span class="tee-label">Boll 1</span><span class="tee-time">10:40</span></div>
+        <ul>
+          <li>Andreas Danielsson</li>
+          <li>Jakob Lind</li>
+          <li>Åsa Lind</li>
+          <li>Viggo Mohlin</li>
+        </ul>
+      </div>
+      <div class="tee">
+        <div class="tee-head"><span class="tee-label">Boll 2</span><span class="tee-time">10:50</span></div>
+        <ul>
+          <li>Håkan Lind</li>
+          <li>Gösta Danielsson</li>
+          <li>Olle Borelius</li>
+          <li>Max Linglöf</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: Programmet -->
+  <section class="slide">
+    <p class="kicker">Tävlingshelgen</p>
+    <h2 class="h2">Programmet</h2>
+    <div class="rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+    <div class="program">
+      <div class="day">
+        <h3>Lördag 4 juli</h3>
+        <ul>
+          <li>Samling vid lodgen</li>
+          <li>Kubbspel, bastu &amp; båtåkning</li>
+          <li>Grillbuffé till kvällen</li>
+        </ul>
+      </div>
+      <div class="day">
+        <h3>Söndag 5 juli</h3>
+        <ul>
+          <li>10:40 — Boll 1 slår ut</li>
+          <li>10:50 — Boll 2 slår ut</li>
+          <li>Prisceremoni &amp; gravering</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: Citat -->
+  <section class="slide">
+    <p class="quote">”Majorerna är fyra.<br>Släktgolfen är den femte.”</p>
+    <p class="quote-cite">— Tävlingskommittén</p>
+  </section>
+
+  <div class="dots" id="dots" aria-hidden="true"></div>
+
+  <script>
+    // ===== Klocka =====
+    const clockEl = document.getElementById('clock');
+    function clock() {
+      const n = new Date();
+      clockEl.textContent = String(n.getHours()).padStart(2, '0') + ':' + String(n.getMinutes()).padStart(2, '0');
+    }
+    clock();
+    setInterval(clock, 5000);
+
+    // ===== Nedräkning =====
+    const TEE_OFF = new Date(2026, 6, 5, 10, 40, 0);
+    const DAY_END = new Date(2026, 6, 5, 23, 59, 59);
+    const cd = document.getElementById('countdown');
+    const liveMsg = document.getElementById('live-msg');
+    const pad = (n) => String(n).padStart(2, '0');
+
+    function tick() {
+      const now = new Date();
+      const diff = TEE_OFF - now;
+      if (diff <= 0) {
+        cd.style.display = 'none';
+        liveMsg.hidden = false;
+        liveMsg.textContent = now <= DAY_END ? 'Tävlingen pågår' : 'Vi ses 2027';
+        return;
+      }
+      document.getElementById('cd-days').textContent = Math.floor(diff / 86400000);
+      document.getElementById('cd-hours').textContent = pad(Math.floor(diff / 3600000) % 24);
+      document.getElementById('cd-mins').textContent = pad(Math.floor(diff / 60000) % 60);
+      document.getElementById('cd-secs').textContent = pad(Math.floor(diff / 1000) % 60);
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ===== Bildspel =====
+    const slides = document.querySelectorAll('.slide');
+    const dotsEl = document.getElementById('dots');
+    slides.forEach(() => dotsEl.appendChild(document.createElement('span')));
+    const dots = dotsEl.querySelectorAll('span');
+    let idx = 0;
+
+    function show(i) {
+      slides.forEach((s, j) => s.classList.toggle('active', j === i));
+      dots.forEach((d, j) => d.classList.toggle('on', j === i));
+    }
+    show(0);
+    setInterval(() => {
+      idx = (idx + 1) % slides.length;
+      show(idx);
+    }, 12000);
+  </script>
+</body>
+</html>

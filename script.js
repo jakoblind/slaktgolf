@@ -1,9 +1,9 @@
 /* Släktgolfen 2026 — The Lind Invitational */
 
 // ===== Nedräkning =====
-// Första start: 4 juli 2026 kl 09:00 (justera vid behov)
-const TEE_OFF = new Date(2026, 6, 4, 9, 0, 0);
-const DAY_END = new Date(2026, 6, 4, 23, 59, 59);
+// Första start: söndag 5 juli 2026 kl 10:40
+const TEE_OFF = new Date(2026, 6, 5, 10, 40, 0);
+const DAY_END = new Date(2026, 6, 5, 23, 59, 59);
 
 const countdownEl = document.getElementById('countdown');
 const liveEl = document.getElementById('countdown-live');
