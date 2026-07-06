@@ -20,7 +20,7 @@ const EDITIONS = [
   { year: 2022, winner: 'Åsa Lind', venue: null },
   { year: 2024, winner: 'Olle Borelius', venue: null },
   { year: 2025, winner: 'Åsa Lind', venue: 'Nybro Golfklubb' },
-  { year: 2026, winner: 'Max Linglöf', venue: 'Lycke Golf & Country Club' },
+  { year: 2026, winner: 'Max Linglöf', venue: 'Lycke Golf & Country Club', score: '40 poäng' },
 ];
 
 // Nästa upplaga. date = golfdagen, partyDate = festen kvällen före.
