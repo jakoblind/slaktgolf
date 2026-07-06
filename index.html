@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Släktgolfen 2026 — The Lind Invitational | Lycke Golf &amp; Country Club</title>
-  <meta name="description" content="Släktgolfen 2026 — The Lind Invitational. En tradition som ingen annan. Lycke Golf & Country Club, 4–5 juli 2026.">
+  <title>Släktgolfen — The Lind Invitational</title>
+  <meta name="description" content="Släktgolfen — The Lind Invitational. En tradition som ingen annan, sedan 2005. Nästa upplaga: Kalmar Golfklubb 2027.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -19,16 +19,16 @@
       <span class="topbar-crest" aria-hidden="true">
         <svg viewBox="0 0 40 40"><use href="#crest-mini"/></svg>
       </span>
-      <span class="topbar-title">Släktgolfen<span class="topbar-year">2026</span></span>
+      <span class="topbar-title">Släktgolfen<span class="topbar-year">MMXXVII</span></span>
     </a>
     <nav class="topbar-nav" id="topnav" aria-label="Huvudmeny">
       <a href="#om">Tävlingen</a>
-      <a href="#banan">Banan</a>
-      <a href="#format">Format</a>
+      <a href="#banan">Nästa bana</a>
+      <a href="#rotationen">Rotationen</a>
       <a href="#kavajen">Hederstavlan</a>
       <a href="#mastare">Mästare</a>
-      <a href="#faltet">Startlistan</a>
-      <a href="#program" class="nav-cta">Programmet</a>
+      <a href="#faltet">2026</a>
+      <a href="#program" class="nav-cta">2027</a>
     </nav>
     <button class="topbar-toggle" id="navtoggle" aria-label="Meny" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -90,7 +90,7 @@
             <circle cx="53" cy="80" r="4" fill="#f6f1e5"/>
             <path d="M42,84 Q60,90 78,84" stroke="#c6a35b" stroke-width="1.2" fill="none"/>
           </g>
-          <text x="60" y="106" text-anchor="middle" font-size="9" letter-spacing="3" font-family="Cinzel, Georgia, serif" fill="#c6a35b">MMXXVI</text>
+          <text x="60" y="106" text-anchor="middle" font-size="9" letter-spacing="3" font-family="Cinzel, Georgia, serif" fill="#c6a35b">MMXXVII</text>
         </svg>
       </div>
 
@@ -98,11 +98,15 @@
       <h1 class="hero-title reveal-hero" style="--d:2">Släktgolfen</h1>
       <div class="hero-rule reveal-hero" style="--d:3" aria-hidden="true"><span></span><i>✦</i><span></span></div>
       <p class="hero-tagline reveal-hero" style="--d:4">En tradition som ingen annan</p>
-      <p class="hero-meta reveal-hero" style="--d:5">
-        Lycke Golf &amp; Country Club &nbsp;·&nbsp; Söndagen den 5 juli 2026 &nbsp;·&nbsp; Första start 10:40
-      </p>
+      <div class="hero-champ reveal-hero" style="--d:5">
+        <p class="hero-champ-label">2026 års mästare</p>
+        <p class="hero-champ-name">Max Linglöf</p>
+        <p class="hero-champ-meta">Lycke Golf &amp; Country Club · 5 juli 2026 · Första titeln</p>
+      </div>
 
-      <div class="countdown reveal-hero" style="--d:6" id="countdown" role="timer" aria-label="Nedräkning till tävlingen">
+      <p class="hero-next reveal-hero" style="--d:6">Nästa upplaga &nbsp;·&nbsp; Kalmar Golfklubb &nbsp;·&nbsp; 3–4 juli 2027</p>
+
+      <div class="countdown reveal-hero" style="--d:7" id="countdown" role="timer" aria-label="Nedräkning till golfdagen 2027">
         <div class="count-unit"><span class="count-num" id="cd-days">–</span><span class="count-label">Dagar</span></div>
         <div class="count-sep">:</div>
         <div class="count-unit"><span class="count-num" id="cd-hours">–</span><span class="count-label">Timmar</span></div>
@@ -111,11 +115,11 @@
         <div class="count-sep">:</div>
         <div class="count-unit"><span class="count-num" id="cd-secs">–</span><span class="count-label">Sekunder</span></div>
       </div>
-      <p class="countdown-live reveal-hero" style="--d:6" id="countdown-live" hidden></p>
+      <p class="countdown-live reveal-hero" style="--d:7" id="countdown-live" hidden></p>
 
-      <div class="hero-actions reveal-hero" style="--d:7">
-        <a class="btn btn-gold" href="#faltet">Se startlistan</a>
-        <a class="btn btn-ghost" href="#program">Helgens program</a>
+      <div class="hero-actions reveal-hero" style="--d:8">
+        <a class="btn btn-gold" href="#banan">Nästa bana: Kalmar</a>
+        <a class="btn btn-ghost" href="#mastare">Mästarna genom åren</a>
       </div>
     </div>
 
@@ -127,11 +131,11 @@
   <!-- ===== Infoband ===== -->
   <div class="infostrip" id="infostrip">
     <div class="infostrip-inner">
-      <div class="info-item"><span class="info-label">Golfdag</span><span class="info-value">5 juli 2026</span></div>
-      <div class="info-item"><span class="info-label">Bana</span><span class="info-value">Lycke G&amp;CC</span></div>
-      <div class="info-item"><span class="info-label">Spelform</span><span class="info-value">18 hål · Par 71</span></div>
-      <div class="info-item"><span class="info-label">Första start</span><span class="info-value">Kl. 10:40</span></div>
-      <div class="info-item"><span class="info-label">Startavgift</span><span class="info-value">200 kr</span></div>
+      <div class="info-item"><span class="info-label">Regerande mästare</span><span class="info-value">Max Linglöf</span></div>
+      <div class="info-item"><span class="info-label">Nästa upplaga</span><span class="info-value">2027</span></div>
+      <div class="info-item"><span class="info-label">Nästa bana</span><span class="info-value">Kalmar GK</span></div>
+      <div class="info-item"><span class="info-label">Datum</span><span class="info-value">3–4 juli 2027</span></div>
+      <div class="info-item"><span class="info-label">Titlar på tavlan</span><span class="info-value">16</span></div>
     </div>
   </div>
 
@@ -144,10 +148,10 @@
         <div class="section-rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
       </div>
       <div class="editorial reveal">
-        <p class="editorial-lede"><span class="dropcap">N</span>är den första bollen slås ut över Lycke söndagen den 5 juli samlas släkten åter för det som med åren vuxit till sommarens mest omtalade idrottsevenemang — åtminstone runt vårt eget middagsbord. Släktgolfen är mer än arton hål: det är skryträttigheter för ett helt år, det är gamla oförrätter som ska rättas till på greenerna, och det är en plats på Hederstavlan som väntar på sitt nästa namn.</p>
+        <p class="editorial-lede"><span class="dropcap">V</span>arje sommar sedan 2005 samlas släkten för det som vuxit till årets mest omtalade idrottsevenemang — åtminstone runt vårt eget middagsbord. Släktgolfen är mer än arton hål: det är skryträttigheter för ett helt år, det är gamla oförrätter som ska rättas till på greenerna, och det är en plats på Hederstavlan som väntar på sitt nästa namn.</p>
         <div class="editorial-cols">
           <p>Här möts generationerna på lika villkor. Handicapsystemet ser till att farfar kan slå sonsonen, att svågern kan detroniseras och att den som knappt hållit i en klubba sedan förra sommaren fortfarande kan gå hela vägen. Allt avgörs på banan — och diskuteras i evighet efteråt.</p>
-          <p>Helgen inleds redan på lördagskvällen med grillbuffé, kubbspel, bastu och båtåkning. På söndagen avgörs allt ute på banan, och efter sista puttern väntar prisceremonin — där segrarens namn för all framtid graveras in i Hederstavlan. Applåder är obligatoriska. Ödmjukhet hos segraren är det inte.</p>
+          <p>Tävlingshelgen inleds traditionsenligt kvällen före med gemensam middag och aktiviteter. Sedan avgörs allt ute på banan, och efter sista puttern väntar prisceremonin — där segrarens namn för all framtid graveras in i Hederstavlan. Applåder är obligatoriska. Ödmjukhet hos segraren är det inte.</p>
         </div>
         <blockquote class="pullquote reveal">
           <p>”Majorerna är fyra. Släktgolfen är den femte.”</p>
@@ -161,30 +165,46 @@
   <section class="section section-green" id="banan">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-kicker section-kicker-gold">Banan</p>
-        <h2 class="section-title">Lycke Golf &amp; Country Club</h2>
+        <p class="section-kicker section-kicker-gold">Nästa bana · 2027</p>
+        <h2 class="section-title">Kalmar Golfklubb</h2>
         <div class="section-rule section-rule-gold" aria-hidden="true"><span></span><i>✦</i><span></span></div>
-        <p class="section-sub">Golf vid havet — granne med Marstrand på Bohusläns kust</p>
+        <p class="section-sub">Golf vid Kalmarsund — sedan 1947</p>
       </div>
 
       <div class="course-grid">
         <div class="course-text reveal">
-          <p>Lycke är en parkbana med inslag av både skogs- och seasidehål, dramatiskt dragen genom höjder och dalar med snabba, välmanikurerade greener. Banan ritades av <strong>Johan Henrikson</strong> tillsammans med proffset <strong>Helen Alfredsson</strong> och stod spelklar 2005.</p>
-          <p>Att Släktgolfen avgörs här är ingen slump. Lycke är en av få svenska banor som stått värd för Europatouren — <strong>Göteborg Masters spelades här 2008</strong>. Där touren en gång tävlade om titlar gör släkten nu upp om något betydligt större: Gröna Kavajen och rätten att ta första biten av tårtan.</p>
-          <p>Havsluften, vinden från Marstrandsfjorden och de böljande fairwaysen gör varje runda till en prövning av både teknik och temperament. Klubbhuset erbjuder dessutom en restaurang med utsikt — perfekt för att i lugn och ro förklara för övriga varför just din runda förstördes av yttre omständigheter.</p>
+          <p>Släktgolfen flyttar österut. 2027 avgörs tävlingen på anrika Kalmar Golfklubb, grundad <strong>1947</strong> och en av sydöstra Sveriges främsta golfanläggningar — <strong>36 hål</strong> fördelade på två banor, vackert belägna vid Kalmarsund.</p>
+          <p><strong>Gamla Banan</strong> är en skogs- och parkbana med kustnära inslag där första hålet spelas med utsikt över sundet, omgestaltad 2009 av Ryder Cup-spelaren <strong>Pierre Fulke</strong>. <strong>Nya Banan</strong> från 1992 bjuder på parkgolf genom tallskogsalléer med vattenhinder som straffar den övermodige.</p>
+          <p>Vilken av banorna som får äran att kröna 2027 års mästare meddelas närmare tävlingen. Klart är att havsluften följer med från Bohuslän — liksom vanan att skylla på vinden.</p>
         </div>
         <div class="course-stats reveal">
-          <div class="stat-card"><span class="stat-num">18</span><span class="stat-label">Hål</span></div>
-          <div class="stat-card"><span class="stat-num">71</span><span class="stat-label">Par</span></div>
-          <div class="stat-card"><span class="stat-num">2005</span><span class="stat-label">Invigd</span></div>
-          <div class="stat-card"><span class="stat-num">2008</span><span class="stat-label">Värd för Europatouren</span></div>
+          <div class="stat-card"><span class="stat-num">36</span><span class="stat-label">Hål</span></div>
+          <div class="stat-card"><span class="stat-num">2</span><span class="stat-label">Banor</span></div>
+          <div class="stat-card"><span class="stat-num">1947</span><span class="stat-label">Grundad</span></div>
+          <div class="stat-card"><span class="stat-num">2027</span><span class="stat-label">Värd för Släktgolfen</span></div>
         </div>
       </div>
 
       <div class="course-address reveal">
-        <span>Lycke Golf &amp; Country Club · Tofta 100 · 442 75 Lycke · Kungälvs kommun</span>
-        <a href="https://www.lyckegc.se" target="_blank" rel="noopener">lyckegc.se&nbsp;→</a>
+        <span>Kalmar Golfklubb · Kalmar</span>
+        <a href="https://www.kalmargk.se" target="_blank" rel="noopener">kalmargk.se&nbsp;→</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== Rotationen ===== -->
+  <section class="section section-cream" id="rotationen">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">Värdbanorna</p>
+        <h2 class="section-title">Rotationen</h2>
+        <div class="section-rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+        <p class="section-sub">Likt majorerna vandrar Släktgolfen mellan Sveriges banor</p>
+      </div>
+      <div class="rotation-grid reveal" id="rotation-grid">
+        <!-- Genereras från data.js -->
+      </div>
+      <p class="rotation-note reveal">Var de första upplagorna spelades utreds av tävlingskommitténs historiska avdelning. Tips mottages tacksamt.</p>
     </div>
   </section>
 
@@ -235,7 +255,7 @@
         <h2 class="section-title reveal">Hederstavlan</h2>
         <div class="section-rule section-rule-gold reveal" aria-hidden="true"><span></span><i>✦</i><span></span></div>
         <p class="reveal">Segraren i Släktgolfen vinner ingen pokal att damma av och ingen kavaj att hänga in i garderoben. Segraren vinner det enda som består: äran — och sitt namn, för all framtid ingraverat i <strong>Lind Trophy</strong>, träbrädan där tävlingens mästare förevigats sedan 2005.</p>
-        <p class="reveal">Pengar spenderas. Formkurvor dalar. Men det som en gång ristats i trä kan ingen ta ifrån dig. Femton plaketter sitter redan på plats — på söndag eftermiddag skruvas den sextonde fast.</p>
+        <p class="reveal">Pengar spenderas. Formkurvor dalar. Men det som en gång ristats i trä kan ingen ta ifrån dig. Sexton plaketter sitter nu på plats — den senaste bär namnet <strong>Max Linglöf</strong>. Raden för 2027 väntar i Kalmar.</p>
       </div>
     </div>
   </section>
@@ -252,29 +272,13 @@
       <div class="champions reveal">
         <table class="champions-table">
           <thead>
-            <tr><th>År</th><th>Mästare</th><th class="th-right">Titel</th></tr>
+            <tr><th>År</th><th>Mästare</th><th>Bana</th><th class="th-right">Titel</th></tr>
           </thead>
-          <tbody>
-            <tr class="champ-reigning">
-              <td>2025</td><td><span class="champ-name">Åsa Lind</span> <span class="champ-badge">Regerande</span></td><td class="td-right">3:e</td>
-            </tr>
-            <tr><td>2024</td><td class="champ-name">Olle Borelius</td><td class="td-right">2:a</td></tr>
-            <tr><td>2022</td><td class="champ-name">Åsa Lind</td><td class="td-right">2:a</td></tr>
-            <tr><td>2020</td><td class="champ-name">Susanna Jungblom</td><td class="td-right">1:a</td></tr>
-            <tr><td>2018</td><td class="champ-name">Andreas Danielsson</td><td class="td-right">3:e</td></tr>
-            <tr><td>2017</td><td class="champ-name">Olle Borelius</td><td class="td-right">1:a</td></tr>
-            <tr><td>2015</td><td class="champ-name">Åsa Lind</td><td class="td-right">1:a</td></tr>
-            <tr><td>2013</td><td class="champ-name">Andreas Danielsson</td><td class="td-right">2:a</td></tr>
-            <tr><td>2012</td><td class="champ-name">Gösta Danielsson</td><td class="td-right">1:a</td></tr>
-            <tr><td>2011</td><td class="champ-name">Andreas Danielsson</td><td class="td-right">1:a</td></tr>
-            <tr><td>2009</td><td class="champ-name">Janna Linglöf</td><td class="td-right">2:a</td></tr>
-            <tr><td>2008</td><td class="champ-name">Christian Rosencranz</td><td class="td-right">2:a</td></tr>
-            <tr><td>2007</td><td class="champ-name">Tobias Borelius</td><td class="td-right">1:a</td></tr>
-            <tr><td>2006</td><td class="champ-name">Janna Linglöf</td><td class="td-right">1:a</td></tr>
-            <tr><td>2005</td><td class="champ-name">Christian Rosencranz</td><td class="td-right">1:a</td></tr>
+          <tbody id="champions-body">
+            <!-- Genereras från data.js -->
           </tbody>
         </table>
-        <p class="champions-note">Flest titlar: Åsa Lind och Andreas Danielsson, tre vardera. De årtal som saknas på tavlan är — likt mycket annat i släkten — föremål för diskussion.</p>
+        <p class="champions-note" id="champions-note"></p>
       </div>
     </div>
   </section>
@@ -283,11 +287,38 @@
   <section class="section section-green" id="faltet">
     <div class="container">
       <div class="section-head reveal">
-        <p class="section-kicker section-kicker-gold">Startlistan</p>
-        <h2 class="section-title">Fältet 2026</h2>
+        <p class="section-kicker section-kicker-gold">Arkivet</p>
+        <h2 class="section-title">Släktgolfen 2026</h2>
         <div class="section-rule section-rule-gold" aria-hidden="true"><span></span><i>✦</i><span></span></div>
-        <p class="section-sub">Åtta spelare. Två bollar. En plats på Hederstavlan.</p>
+        <p class="section-sub">Lycke Golf &amp; Country Club · 5 juli 2026</p>
       </div>
+
+      <div class="winner-feature reveal">
+        <figure class="winner-photo">
+          <img src="img/mastaren-2026.jpg" alt="Max Linglöf pekar stolt på sitt scorekort efter segern" loading="lazy">
+        </figure>
+        <div class="winner-text">
+          <p class="section-kicker section-kicker-gold">Mästaren</p>
+          <h3 class="winner-name">Max Linglöf</h3>
+          <p class="winner-desc">I sin jakt på en första titel höll Max Linglöf huvudet kallt när det blåste som mest över Lycke. Scorekortet talar sitt tydliga språk — och pekfingret likaså. Namnet graveras nu in i Lind Trophy, och skryträttigheterna gäller till juli 2027.</p>
+        </div>
+      </div>
+
+      <div class="gallery reveal">
+        <figure class="gallery-item">
+          <img src="img/gruppen-2026.jpg" alt="Hela sällskapet samlat vid Lycke efter tävlingen" loading="lazy">
+          <figcaption>Fältet med supporterklack, Lycke G&amp;CC</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/terrassen-2026.jpg" alt="Lunch på terrassen med utsikt över banan" loading="lazy">
+          <figcaption>Lunch med utsikt över banan</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/lodgen.jpg" alt="Lodgen — tävlingshelgens högkvarter" loading="lazy">
+          <figcaption>Lodgen — tävlingshelgens högkvarter</figcaption>
+        </figure>
+      </div>
+
       <div class="tee-grid">
         <article class="tee-card reveal" style="--d:0">
           <div class="tee-head">
@@ -297,7 +328,7 @@
           <ul class="tee-list">
             <li>Andreas Danielsson</li>
             <li>Jakob Lind</li>
-            <li>Åsa Lind <span class="champ-badge">Regerande mästare</span></li>
+            <li>Åsa Lind</li>
             <li>Viggo Mohlin</li>
           </ul>
         </article>
@@ -310,11 +341,10 @@
             <li>Håkan Lind</li>
             <li>Gösta Danielsson</li>
             <li>Olle Borelius</li>
-            <li>Max Linglöf</li>
+            <li>Max Linglöf <span class="champ-badge">Mästare</span></li>
           </ul>
         </article>
       </div>
-      <p class="field-note reveal">Startfältet är spikat — anmälan är stängd.</p>
     </div>
   </section>
 
@@ -323,32 +353,29 @@
     <div class="container invite-inner">
       <div class="invite-card reveal">
         <div class="invite-border">
-          <p class="section-kicker">Tävlingshelgen</p>
-          <h2 class="invite-title">Programmet</h2>
+          <p class="section-kicker">Nästa upplaga</p>
+          <h2 class="invite-title">Släktgolfen 2027</h2>
           <div class="section-rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+          <p class="invite-text">Tävlingskommittén meddelar att Släktgolfen 2027 avgörs på Kalmar Golfklubb. Boka helgen redan nu — Hederstavlan väntar på sitt sjuttonde namn.</p>
           <div class="program-list">
             <div class="program-day">
-              <h3 class="program-day-title">Lördag 4 juli</h3>
+              <h3 class="program-day-title">Lördag 3 juli — Festen</h3>
               <ul>
-                <li>Samling vid lodgen</li>
-                <li>Kubbspel, bastu &amp; båtåkning</li>
-                <li>Grillbuffé till kvällen</li>
+                <li>Samling i Kalmar</li>
+                <li>Gemensam middag &amp; aktiviteter</li>
+                <li>Taktiksnack och psykningar</li>
               </ul>
             </div>
             <div class="program-day">
-              <h3 class="program-day-title">Söndag 5 juli — Golfdagen</h3>
+              <h3 class="program-day-title">Söndag 4 juli — Golfen</h3>
               <ul>
-                <li>10:40 — Boll 1 slår ut</li>
-                <li>10:50 — Boll 2 slår ut</li>
+                <li>18 hål på Kalmar GK</li>
+                <li>Starttider meddelas</li>
                 <li>Prisceremoni &amp; gravering efter sista boll</li>
               </ul>
             </div>
           </div>
-          <figure class="lodge-figure">
-            <img src="img/lodgen.jpg" alt="Lodgen — röd träbyggnad med uteservering i bohuslänskt landskap" loading="lazy">
-            <figcaption>Lodgen — tävlingshelgens högkvarter</figcaption>
-          </figure>
-          <p class="invite-fine">Anmälan är stängd — startfältet är spikat · Startavgift 200 kr per spelare</p>
+          <p class="invite-fine">Anmälan öppnar närmare tävlingen · Detaljer meddelas av tävlingskommittén</p>
         </div>
       </div>
     </div>
@@ -361,12 +388,13 @@
         <svg viewBox="0 0 40 40" class="crest-small"><use href="#crest-mini"/></svg>
       </div>
       <p class="footer-title">Släktgolfen · The Lind Invitational</p>
-      <p class="footer-meta">Lycke Golf &amp; Country Club · 4–5 juli 2026</p>
+      <p class="footer-meta">Nästa upplaga: Kalmar Golfklubb · 3–4 juli 2027</p>
       <p class="footer-line">En tradition som ingen annan — sedan 2005.</p>
       <p class="footer-tv"><a href="tv.html">TV-läge för lodgen&nbsp;→</a></p>
     </div>
   </footer>
 
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

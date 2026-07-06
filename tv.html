@@ -289,7 +289,7 @@
   </div>
   <div class="frame" aria-hidden="true"></div>
 
-  <p class="brand">Släktgolfen <em>MMXXVI</em></p>
+  <p class="brand">Släktgolfen <em>MMXXVII</em></p>
   <p class="clock" id="clock">--:--</p>
 
   <!-- Slide 1: Titel + nedräkning -->
@@ -311,7 +311,7 @@
     <p class="kicker">The Lind Invitational</p>
     <h1 class="title">Släktgolfen</h1>
     <p class="tagline">En tradition som ingen annan</p>
-    <p class="meta">Lycke Golf &amp; Country Club · Söndag 5 juli · 10:40</p>
+    <p class="meta">Nästa upplaga · Kalmar Golfklubb · 3–4 juli 2027</p>
     <div class="countdown" id="countdown">
       <div class="cd-unit"><span class="cd-num" id="cd-days">–</span><span class="cd-label">Dagar</span></div>
       <div class="cd-unit"><span class="cd-num" id="cd-hours">–</span><span class="cd-label">Timmar</span></div>
@@ -321,52 +321,32 @@
     <p class="live-msg" id="live-msg" hidden></p>
   </section>
 
-  <!-- Slide 2: Startlistan -->
+  <!-- Slide 2: Mästaren 2026 -->
   <section class="slide">
-    <p class="kicker">Startlistan</p>
-    <h2 class="h2">Fältet 2026</h2>
+    <p class="kicker">Släktgolfen 2026 · Lycke G&amp;CC</p>
+    <h2 class="h2">Max Linglöf</h2>
     <div class="rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
-    <div class="tees">
-      <div class="tee">
-        <div class="tee-head"><span class="tee-label">Boll 1</span><span class="tee-time">10:40</span></div>
-        <ul>
-          <li>Andreas Danielsson</li>
-          <li>Jakob Lind</li>
-          <li>Åsa Lind</li>
-          <li>Viggo Mohlin</li>
-        </ul>
-      </div>
-      <div class="tee">
-        <div class="tee-head"><span class="tee-label">Boll 2</span><span class="tee-time">10:50</span></div>
-        <ul>
-          <li>Håkan Lind</li>
-          <li>Gösta Danielsson</li>
-          <li>Olle Borelius</li>
-          <li>Max Linglöf</li>
-        </ul>
-      </div>
-    </div>
+    <p class="tagline">Mästare 2026 — första titeln</p>
+    <p class="meta">Namnet graveras in i Lind Trophy</p>
   </section>
 
-  <!-- Slide 3: Programmet -->
+  <!-- Slide 3: Nästa upplaga -->
   <section class="slide">
-    <p class="kicker">Tävlingshelgen</p>
-    <h2 class="h2">Programmet</h2>
+    <p class="kicker">Nästa upplaga</p>
+    <h2 class="h2">Kalmar Golfklubb</h2>
     <div class="rule" aria-hidden="true"><span></span><i>✦</i><span></span></div>
     <div class="program">
       <div class="day">
-        <h3>Lördag 4 juli</h3>
+        <h3>Lördag 3 juli 2027</h3>
         <ul>
-          <li>Samling vid lodgen</li>
-          <li>Kubbspel, bastu &amp; båtåkning</li>
-          <li>Grillbuffé till kvällen</li>
+          <li>Festen — samling i Kalmar</li>
+          <li>Gemensam middag &amp; aktiviteter</li>
         </ul>
       </div>
       <div class="day">
-        <h3>Söndag 5 juli</h3>
+        <h3>Söndag 4 juli 2027</h3>
         <ul>
-          <li>10:40 — Boll 1 slår ut</li>
-          <li>10:50 — Boll 2 slår ut</li>
+          <li>Golfen — 18 hål, Kalmar GK</li>
           <li>Prisceremoni &amp; gravering</li>
         </ul>
       </div>
@@ -381,8 +361,8 @@
     <div class="champs">
       <div class="champ-col">
         <h3>Regerande mästare</h3>
-        <p class="champ-big">Åsa Lind</p>
-        <p class="champ-sub">2025 · 2022 · 2015</p>
+        <p class="champ-big">Max Linglöf</p>
+        <p class="champ-sub">2026 · Första titeln</p>
       </div>
       <div class="champ-col">
         <h3>Flest titlar</h3>
@@ -411,8 +391,8 @@
     setInterval(clock, 5000);
 
     // ===== Nedräkning =====
-    const TEE_OFF = new Date(2026, 6, 5, 10, 40, 0);
-    const DAY_END = new Date(2026, 6, 5, 23, 59, 59);
+    const TEE_OFF = new Date(2027, 6, 4, 0, 0, 0);
+    const DAY_END = new Date(2027, 6, 4, 23, 59, 59);
     const cd = document.getElementById('countdown');
     const liveMsg = document.getElementById('live-msg');
     const pad = (n) => String(n).padStart(2, '0');
@@ -423,7 +403,7 @@
       if (diff <= 0) {
         cd.style.display = 'none';
         liveMsg.hidden = false;
-        liveMsg.textContent = now <= DAY_END ? 'Tävlingen pågår' : 'Vi ses 2027';
+        liveMsg.textContent = now <= DAY_END ? 'Tävlingen pågår' : 'Tack för i år';
         return;
       }
       document.getElementById('cd-days').textContent = Math.floor(diff / 86400000);
