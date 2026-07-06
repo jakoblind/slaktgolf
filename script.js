@@ -28,14 +28,17 @@ if (tbody) {
 const rotationEl = document.getElementById('rotation-grid');
 if (rotationEl) {
   const played = EDITIONS.filter((e) => e.venue);
+  const unknown = EDITIONS.filter((e) => !e.venue);
   const cards = [];
 
-  cards.push(`
-    <article class="rotation-card rotation-card-mystery">
-      <span class="rotation-year">2005–2025</span>
-      <span class="rotation-venue">Banor under utredning</span>
-      <span class="rotation-winner">Historiska avdelningen arbetar</span>
-    </article>`);
+  if (unknown.length) {
+    cards.push(`
+      <article class="rotation-card rotation-card-mystery">
+        <span class="rotation-year">${unknown[0].year}–${unknown[unknown.length - 1].year}</span>
+        <span class="rotation-venue">Banor under utredning</span>
+        <span class="rotation-winner">Historiska avdelningen arbetar</span>
+      </article>`);
+  }
 
   played.forEach((e) => {
     cards.push(`
