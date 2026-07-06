@@ -24,10 +24,11 @@ const EDITIONS = [
 ];
 
 // Nästa upplaga. date = golfdagen, partyDate = festen kvällen före.
+// Banan är inte spikad — kandidaterna är Nybro GK och Kalmar GK.
 const NEXT = {
   year: 2027,
-  venue: 'Kalmar Golfklubb',
-  venueShort: 'Kalmar GK',
+  venue: 'Nybro GK eller Kalmar GK',
+  venueShort: 'Nybro/Kalmar',
   date: '2027-07-04',
   partyDate: '2027-07-03',
 };
