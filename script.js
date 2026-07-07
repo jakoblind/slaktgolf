@@ -95,6 +95,49 @@ if (countdownEl && NEXT.date) {
   setInterval(tick, 1000);
 }
 
+// ===== Lightbox =====
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const photos = Array.from(document.querySelectorAll('.gallery-item img, .winner-photo img, .trophy-figure img'));
+  let current = 0;
+
+  function openLightbox(i) {
+    current = (i + photos.length) % photos.length;
+    const img = photos[current];
+    const fig = img.closest('figure');
+    const cap = fig ? fig.querySelector('figcaption') : null;
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = cap ? cap.textContent : (img.alt || '');
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  photos.forEach((img, i) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => openLightbox(i));
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); openLightbox(current - 1); });
+  document.getElementById('lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); openLightbox(current + 1); });
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') openLightbox(current - 1);
+    if (e.key === 'ArrowRight') openLightbox(current + 1);
+  });
+}
+
 // ===== Scroll-reveal =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
